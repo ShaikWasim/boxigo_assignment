@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import HomePage from "./components/HomePage/HomePage";
+import "./App.css";
+import FetchData from "./fetchData/FetchData";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [fetchedData, setData] = useState([]);
+
+  useEffect(() => {
+    // console.log(fetchedData);
+    // eslint-disable-next-line
+  }, [fetchedData]);
+
+  function changeData(fetchedData) {
+    setData(fetchedData);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FetchData fetchData={changeData} />
+      <HomePage customer={fetchedData} />
     </div>
   );
 }

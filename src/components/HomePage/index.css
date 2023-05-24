@@ -1,0 +1,27 @@
+.aside {
+    display:  flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 1rem;
+    gap: .1rem;
+    padding-left: 6px;
+
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 16% 84%;
+    height: 100vh;
+
+}
+
+.container {
+    display: column;
+    width: 100%;
+
+}
+
+.moves-card-data1 {
+    /* display: flex; */
+}
